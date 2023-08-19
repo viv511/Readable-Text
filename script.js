@@ -1,46 +1,53 @@
 let words = [];
 
 function getRawText() {
-    words = []
+    words = [];
     var fullText = document.getElementById("rawText").value;
     rawToWords(fullText);
-    formatWords(words)
+    formatWords()
     newText = combine();
 
     document.getElementById("output").innerHTML = newText;
 }
 
 
-
 function rawToWords(raw) {
     for(let i=0; i<raw.length; i++) {
-        if(raw[i] == ' ') {
-            var word = raw.substr(0, i);
-            words.push(word);
+        if(raw[i] === ' ') {
+            words.push(raw.substr(0, i));
             raw = raw.substring(i+1);
+            i = 0;
         }
     }
+    words.push(raw);
 }
 
 function combine() {
     var fullFormattedText = "";
-    for(let i=0; i<words; i++) {
-        fullFormattedText += words[i] + " ";
+    for(let i=0; i<words.length; i++) {
+        fullFormattedText += words[i] + "\n";
     }
 
     return fullFormattedText;
 }
 
-function formatWords(listOfWords) {
-    for(let i=0; i<listOfWords; i++) {
-        listOfWords[i] = beBOLD(listOfWords[i]);
+function formatWords() {
+    for(let i=0; i<words.length; i++) {
+        words[i] = beBold(words[i]);
     }
 }
 
-function beBOLD(wordToBold) {
-    var boldedWord = "<b>" + wordToBold[0] + "<b>";
+function beBold(wordToBold) {
+    // var boldAmt = wordToBold.length/2;
+    // var boldedWord = "<b>" + wordToBold.substr(0, boldAmt) + "</b>";
+    var boldedWord = "<b>" + wordToBold[0] + "</b>";
     if(wordToBold.length > 1) {
         boldedWord += wordToBold.substring(1);
+        // boldedWord += wordToBold.substring(boldAmt);
+        // var lastChar = wordToBold[wordToBold.length-1];
+        // if((lastChar === ".") || (lastChar === "?") || (lastChar === "!")) {
+        //     boldedWord += "<br>";
+        // }
     }
 
     return boldedWord;
