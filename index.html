@@ -12,14 +12,14 @@
 </head>
 <body>
 
-    <label> Use the following textbox to insert raw text </label>
+    <h1 style="text-align: center"> Insert text here: (copy & paste) </h1>
+   
+    <textarea class="text" id="rawText" rows="30" cols="300"></textarea>
     <br>
-    <textarea id="rawText" rows="12" cols="120"></textarea>
-    <br>
-    <button type="button" onclick="getRawText()">Try it</button>
+    <button class="text" type="button" onclick="getRawText()">Try it</button>
 
-    <div class="output">
-        <p id="output"> Easier to read (i think) text will appear here :) </p>
+    <div>
+        <p class="output" id="output"> Easier to read (i think) text will appear here :) </p>
     </div>
     
 </body>

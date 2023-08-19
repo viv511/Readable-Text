@@ -4,6 +4,11 @@
     border-radius: 1cm;
     margin: 3%;
     padding: 2%;
-    font-size: medium;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-size: x-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text {
+    font-size: x-large;
+    font-family:'Courier New', Courier, monospace;
 }
