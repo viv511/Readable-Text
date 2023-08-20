@@ -13,7 +13,7 @@ function getRawText() {
 
 function rawToWords(raw) {
     for(let i=0; i<raw.length; i++) {
-        if(raw[i] === ' ') {
+        if((raw[i] === ' ') || (raw[i] === '\n')) {
             words.push(raw.substr(0, i+1));
             raw = raw.substring(i+1);
             i = 0;
