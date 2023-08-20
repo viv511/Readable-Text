@@ -14,7 +14,7 @@ function getRawText() {
 function rawToWords(raw) {
     for(let i=0; i<raw.length; i++) {
         if(raw[i] === ' ') {
-            words.push(raw.substr(0, i));
+            words.push(raw.substr(0, i+1));
             raw = raw.substring(i+1);
             i = 0;
         }
@@ -25,7 +25,7 @@ function rawToWords(raw) {
 function combine() {
     var fullFormattedText = "";
     for(let i=0; i<words.length; i++) {
-        fullFormattedText += words[i] + "\n";
+        fullFormattedText += words[i];
     }
 
     return fullFormattedText;

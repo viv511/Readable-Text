@@ -5,6 +5,7 @@
     margin: 3%;
     padding: 2%;
     font-size: xx-large;
+    white-space: pre-line;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
