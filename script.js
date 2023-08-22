@@ -27,7 +27,7 @@ function combine() {
     for(let i=0; i<words.length; i++) {
         fullFormattedText += words[i];
     }
-
+    console.log(fullFormattedText);
     return fullFormattedText;
 }
 
@@ -38,17 +38,22 @@ function formatWords() {
 }
 
 function beBold(wordToBold) {
-    // var boldAmt = wordToBold.length/2;
-    // var boldedWord = "<b>" + wordToBold.substr(0, boldAmt) + "</b>";
-    var boldedWord = "<b>" + wordToBold[0] + "</b>";
-    if(wordToBold.length > 1) {
-        boldedWord += wordToBold.substring(1);
-        // boldedWord += wordToBold.substring(boldAmt);
-        // var lastChar = wordToBold[wordToBold.length-1];
-        // if((lastChar === ".") || (lastChar === "?") || (lastChar === "!")) {
-        //     boldedWord += "<br>";
-        // }
+    var boldedWord = "";
+    
+    if(wordToBold[0] == "\"") {
+        boldedWord += "<br><br>‎ ‎ ‎ ‎ ‎ ‎ ‎\"<b>" + wordToBold[1] + "</b>";
+        if(wordToBold.length > 1) {
+            boldedWord += wordToBold.substring(2);
+        }
     }
+    else {
+        boldedWord += "<b>" + wordToBold[0] + "</b>";
+        if(wordToBold.length > 1) {
+            boldedWord += wordToBold.substring(1);
+        }
+    }
+    
+    
 
     return boldedWord;
 }
